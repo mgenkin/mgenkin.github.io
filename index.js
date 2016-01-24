@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	var w = window.innerWidth;
 	var h = window.innerHeight;
-	$("#bgcanvas").attr("width", window.innerWidth);
-	$("#bgcanvas").attr("height", window.innerHeight);
-	var c = document.getElementById("bgcanvas");
+	$("#bg_canvas").attr("width", window.innerWidth);
+	$("#bg_canvas").attr("height", window.innerHeight);
+	var c = document.getElementById("bg_canvas");
 	console.log(window.innerWidth)
 	var ctx = c.getContext("2d");
 	var img_array = [];

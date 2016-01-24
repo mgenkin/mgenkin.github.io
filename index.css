@@ -1,11 +1,32 @@
 body {
     background-color: #cccccc;
 } 
-#bgcanvas{
+#bg_canvas{
 	position:absolute;
 	top:0;
 	left:0;
-/*	width:calc(100%-1px);
-	height:calc(100%-1px);*/
 	z-index:-1;
+}
+#big_div{
+	margin:auto;
+	display:block;
+	background-color:rgba(0, 150, 250, 0.65);
+	color:#EEB0BB;
+	text-align:center;
+	width:80%;
+	height:100%;
+	font-family: 'Montserrat', sans-serif;
+	border-radius:30px;
+	border: 1px solid black;
+}
+#title_text{
+	margin-top:50px;
+	margin-bottom:50px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size:3em;
+
+}
+h4 {
+	color: #FFE0EB;
+	font-family:'Montserrat', sans-serif;
 }
