@@ -1,32 +1,96 @@
-body {
-    background-color: #cccccc;
+@font-face { 
+  font-family: Antipasto; 
+  src: url('Antipasto_regular.otf'); 
 } 
-#bg_canvas{
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:-1;
+@font-face { 
+  font-family: AntipastoLight; 
+  src: url('Antipasto_extralight.otf'); 
+} 
+h2 {
+  font-family: Antipasto;
+  opacity: 1;
 }
-#big_div{
-	margin:auto;
-	display:block;
-	background-color:rgba(0, 150, 250, 0.65);
-	color:#EEB0BB;
-	text-align:center;
-	width:80%;
-	height:100%;
-	font-family: 'Montserrat', sans-serif;
-	border-radius:30px;
-	border: 1px solid black;
+h1{
+  font-family: AntipastoLight;
+  opacity: 1;
 }
-#title_text{
-	margin-top:50px;
-	margin-bottom:50px;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	font-size:3em;
+p {
+  font-family: Antipasto;
+  font-size: 20;
+  opacity: 1;
 
 }
-h4 {
-	color: #FFE0EB;
-	font-family:'Montserrat', sans-serif;
+body { 
+  margin:0 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+ }
+#nav {
+  height:10%;
+  width: 100%;
+  position: fixed;
+  opacity: 0.8;
+  color: white;
+  z-index:1;
+  display: flex;
+  background-color: #223355;
+}
+.nav-item{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  transition: all .6s;
+}
+.nav-spacer{
+  width: 20%;
+  height: 100%;
+}
+.nav-hover{
+  transition: all .6s;
+  background: #334455; 
+}
+#content{
+  width:75%;
+  height: 90%;
+  top:10%;
+  z-index: 1;
+  opacity:1.0;
+  background-color: rgba(0, 22, 22, 0.4);
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  position:relative;
+  font-family:AntipastoLight;
+  pointer-events: none;
+}
+#square {
+  height: 100%;
+  width: 100%;
+  background-color: #222222;
+  margin: 0 0 0 0;
+  z-index:-1;
+  position:fixed;
+}
+.circleContainer{
+  position:absolute;
+  opacity: 0.5;
+  margin: 0 0 0 0;
+  display: flex;
+  align-items: center;
+}
+.circle {
+  margin: auto auto;
+  width: 1px;
+  height: 1px;
+  border-radius: 100px;
+  background-color: white;
+  position: relative;
+  transition: width 2s, height 2s;
+}
+.circle-hover{
+  width:5px;
+  height:5px;
+  transition: width .1s, height .1s;
 }

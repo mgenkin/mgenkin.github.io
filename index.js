@@ -1,31 +1,40 @@
 $(document).ready(function(){
-	var w = window.innerWidth;
-	var h = window.innerHeight;
-	$("#bg_canvas").attr("width", window.innerWidth);
-	$("#bg_canvas").attr("height", window.innerHeight);
-	var c = document.getElementById("bg_canvas");
-	console.log(window.innerWidth)
-	var ctx = c.getContext("2d");
-	var img_array = [];
-	for(var i = 0; i < 9; i++){
-		for(var j = 0; j < 9; j++){
-			var img = new Image();
-			img.src = "blocks/block"+i+"_"+j+".jpg";
-			img_array.push(img);
-		};
-	};
-	var w_im = img_array[0].width;
-	var h_im = img_array[0].height;
-	var i = 0;
-	var j = 0;
-	var r =  Math.floor((Math.random() * 90)); 
-	while(j<=w){
-		while(i<=h){
-			r =  Math.floor((Math.random() * 30));
-			ctx.drawImage(img_array[r], j, i);
-			i += h_im;
-		};
-		j += w_im;
-		i = 0;
-	};
+  $(".nav-item").on("mouseover",function(){
+    $( this ).addClass( "nav-hover");
+  })
+    .on("mouseout",function(){
+    $( this ).removeClass( "nav-hover");
+  })
+    .on("click", function(){
+      $( this ).css({"background": "#445566"});
+      location.reload()
+    });
+  drawDots();
+  $(window).resize(drawDots);
 });
+function drawDots(){
+  $("#square").empty();
+  var W = $("#square").width();
+  var H = $("#square").height();
+  var i = 0;
+  var j = 0;
+  var wfrac = 70;
+  var hfrac = 50;
+  for(var i = 0; i < W; i += H/hfrac){
+    for(var j = 0; j < H; j += W/wfrac){
+      var $circContainer = $("<div></div>")
+        .addClass('circleContainer')
+        .css({left: i, top: j, width:W/wfrac, height: H/hfrac})
+        .appendTo("#square");
+      var $circ = $("<div></div>")
+        .addClass('circle')
+        .appendTo($circContainer);
+    };
+  };
+  $(".circleContainer").on("mouseover", function(){
+    $(this).children().stop(true, true).toggleClass("circle-hover");
+  });
+  $(".circleContainer").on("mouseout", function(){
+    $(this).children().stop(true, true).toggleClass("circle-hover");
+  });
+};
